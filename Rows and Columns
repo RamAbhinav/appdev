@@ -1,0 +1,83 @@
+main.dart
+
+import 'package:flutter/material.dart';
+import './app_screens/home.dart';
+
+void main() {
+  runApp(MaterialApp(
+   debugShowCheckedModeBanner: false,
+   title: "Exploring UI Widgets",
+   home: Home(),
+   )
+  );
+}
+
+
+
+home.dart:
+
+import "package:flutter/material.dart";
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        padding: EdgeInsets.only(left: 30, right: 30, top: 50),
+//      alignment: Alignment.center,
+//      margin: EdgeInsets.only(top: 170, left: 40, right:40, bottom: 330),
+//      color: Colors.deepPurple,
+      child: Column(
+        children: <Widget>[
+
+          Row(
+        children: <Widget>[
+           Expanded(child: Text("Travis Scott:", 
+          textDirection: TextDirection.ltr, 
+          style: TextStyle(
+            color: Colors.lightGreenAccent, fontSize: 30.0,
+            decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+            fontWeight: FontWeight.w700
+          ),
+          )),
+
+          Expanded (child: Text("STOP TRYNA BE GOD", 
+            textDirection: TextDirection.ltr, 
+            style: TextStyle(
+              color: Colors.lightGreenAccent, fontSize: 23.0,
+              decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+              fontWeight: FontWeight.w700
+            ),
+            )),
+        ],
+        ),
+
+
+       Row(
+        children: <Widget>[
+           Expanded(child: Text("Kid Cudi:", 
+          textDirection: TextDirection.ltr, 
+          style: TextStyle(
+            color: Colors.lightGreenAccent, fontSize: 30.0,
+            decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+            fontWeight: FontWeight.w700
+          ),
+          )),
+
+          Expanded (child: Text("Man on the Moon: End of The Day", 
+            textDirection: TextDirection.ltr, 
+            style: TextStyle(
+              color: Colors.lightGreenAccent, fontSize: 23.0,
+              decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+              fontWeight: FontWeight.w700
+            ),
+            )),
+        ],
+        ) 
+        ]
+      ),
+      )
+    );   
+  }
+}
