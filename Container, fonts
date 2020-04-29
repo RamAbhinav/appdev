@@ -1,0 +1,39 @@
+main.dart 
+
+import 'package:flutter/material.dart';
+import './app_screens/home.dart';
+
+void main() {
+  runApp(MaterialApp(
+   debugShowCheckedModeBanner: false,
+   title: "Exploring UI Widgets",
+   home: Home(),
+   )
+  );
+}
+
+home.dart
+
+import "package:flutter/material.dart";
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+      alignment: Alignment.center,
+      margin: EdgeInsets.only(top: 170, left: 40, right:40, bottom: 330),
+      color: Colors.deepPurple,
+      child: Text("Astro", 
+        textDirection: TextDirection.ltr, 
+        style: TextStyle(
+           color: Colors.lightGreenAccent, fontSize: 75.0,
+           decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+           fontWeight: FontWeight.w700
+          ),
+        ),
+      )
+    );   
+  }
+}
