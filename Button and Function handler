@@ -1,0 +1,128 @@
+home.dart
+
+import "package:flutter/material.dart";
+
+class Home extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        color: Colors.deepPurple,
+        padding: EdgeInsets.only(left: 30, right: 30, top: 50, bottom: 40),
+//      alignment: Alignment.center,
+//      margin: EdgeInsets.only(top: 170, left: 40, right:40, bottom: 330),
+//      color: Colors.deepPurple,
+      child: Column(
+        children: <Widget>[
+
+        AlbumArtAsset(),
+
+          Row(
+        children: <Widget>[
+           Expanded(child: Text("Travis Scott:", 
+          textDirection: TextDirection.ltr, 
+          style: TextStyle(
+            color: Colors.lightGreenAccent, fontSize: 30.0,
+            decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+            fontWeight: FontWeight.w700
+          ),
+          )),
+
+          Expanded (child: Text("YOSEMITE", 
+            textDirection: TextDirection.ltr, 
+            style: TextStyle(
+              color: Colors.lightGreenAccent, fontSize: 23.0,
+              decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+              fontWeight: FontWeight.w700
+            ),
+            )),
+        ],
+        ),
+
+
+       Row(
+        children: <Widget>[
+           Expanded(child: Text("Kid Cudi:", 
+          textDirection: TextDirection.ltr, 
+          style: TextStyle(
+            color: Colors.lightGreenAccent, fontSize: 30.0,
+            decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+            fontWeight: FontWeight.w700
+          ),
+          )),
+
+          Expanded (child: Text("Soundtrack 2 My Life", 
+            textDirection: TextDirection.ltr, 
+            style: TextStyle(
+              color: Colors.lightGreenAccent, fontSize: 23.0,
+              decoration: TextDecoration.none, fontFamily: 'NunitoSans', 
+              fontWeight: FontWeight.w700
+            ),
+            )),
+        ],
+        ),
+
+          AlbumPlayButton()
+
+        ]
+      ),
+      )
+    );   
+  }
+}
+
+class AlbumArtAsset extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+  AssetImage assetImage = AssetImage('images/AlbumArt.jpg');
+  Image image = Image(image: assetImage);
+    return Container(child: image,);
+  }
+}
+
+class AlbumPlayButton extends StatelessWidget{
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 250,
+      height: 80,
+      margin: EdgeInsets.only(top: 30),
+      child: RaisedButton(
+        color: Colors.deepOrangeAccent,
+        elevation: 6.0,
+        child: Text(
+          'Play',
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'NunitoSans',
+            fontWeight: FontWeight.w700,
+            fontSize: 30
+          ),
+          ),
+        onPressed: (){
+          pause(context);
+        }
+      ),
+    );
+  }
+}
+
+
+void pause(BuildContext context){
+  
+  var alertDialog = AlertDialog(
+    title: Text('Wait'),
+    content: Text('Use Headphones for a better experience.')
+  );
+  
+  showDialog(
+    context: context,
+    builder: (BuildContext context){
+      return alertDialog;
+    }
+    
+    );
+
+}
